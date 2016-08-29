@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>tips</title>
+	<link rel="stylesheet" href="tips.css">
+</head>
+<body>
+<p>
+提示框<br/>
+	css引入tips.css<br/>
+	调用方法 <br/>
+	$.tips({<br/>
+		text: '请输入正确的信息',<br/>
+		fixed: true， // 可选，设置了之后无法点击关闭弹框<br/>
+		setTime: true， // 可选，设置了可以通过time属性配置自动关闭时间，默认5S<br/>
+		time： 5000，// 可选，只有设置了setTime才能生效，用于配置时间<br/>
+	})<br/>
+
+</p>
+<script type='text/javascript' src='http://g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+<script src="zepto.tips.js"></script>
+<script>
+	$.tips({
+		text: '请输入正确的信息',
+		fixed: true, // 可选，设置了之后无法点击关闭弹框
+		setTime: true, // 可选，设置了可以通过time属性配置自动关闭时间，默认5S
+		time: 5000,// 可选，只有设置了setTime才能生效，用于配置时间
+	})
+</script>
+</body>
+</html>

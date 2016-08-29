@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>基于bootstrap的分页</title>
+	<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+	<script src="jsfund.ui.paging.js"></script>
+	<style>
+		.pagination>li {
+		    display: inline-block;
+		}
+		.pagination>li>input {
+		    position: relative;
+		    float: left;
+		    padding: 6px 12px;
+		    margin-left: -1px;
+		    line-height: 1.42857143;
+		    color: #337ab7;
+		    text-decoration: none;
+		    background-color: #fff;
+		    border: 1px solid #ddd;
+		    border-radius: initial;
+		    width: 40px;
+		}
+		span.pagingMsg {
+		    display: block;
+		    padding-left: 0;
+		    margin-top: 28px;
+		    float: left;
+		}
+	</style>
+</head>
+<body>
+<div id="paging"></div>
+<script>
+	var pageNo = 1;
+	lxyPaging();
+	function lxyPaging () {
+		jsfund.ui.paging.render({
+			pageNo: pageNo,
+			pagingDiv: $("#paging"),
+			totalCount: 50,
+			pageSize: 5,
+			callback : function(thispageNo){
+				pageNo = thispageNo;
+				lxyPaging();
+			}
+		});
+	}
+
+</script>
+</body>
+</html>
